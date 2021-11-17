@@ -16,35 +16,35 @@ getPS <- function(spatial = TRUE) {
   ps <- ps %>%
     tibble::tibble() %>%
     janitor::clean_names() %>%
-    dplyr::rename(dagi_ID = dagi_id,
-                  station = afstemningsstednavn,
-                  st_id = afstemningsstedadresseid,
-                  st_add = afstemningsstedadressebetegnelse,
-                  st_lon = afstemningssted_adgangspunkt_x,
-                  st_lat = afstemningssted_adgangspunkt_y,
-                  muni_code = kommunekode,
-                  muni = kommunenavn,
-                  regi_code = regionskode,
-                  regi = regionsnavn,
-                  kreds_id = opstillingskredsnummer,
-                  kreds = opstillingskredsnavn,
-                  stkreds_id = storkredsnummer,
-                  stkreds = storkredsnavn,
-                  valg_ld_l = valglandsdelsbogstav,
-                  valg_ld = valglandsdelsnavn,
-                  edit = aendret,
-                  geo_edit = geo_aendret,
-                  geo_v = geo_version,
-                  vcent_lon = visueltcenter_x,
-                  vcent_lat = visueltcenter_y) %>%
+    dplyr::rename(dagi_ID = .data$dagi_id,
+                  station = .data$afstemningsstednavn,
+                  st_id = .data$afstemningsstedadresseid,
+                  st_add = .data$afstemningsstedadressebetegnelse,
+                  st_lon = .data$afstemningssted_adgangspunkt_x,
+                  st_lat = .data$afstemningssted_adgangspunkt_y,
+                  muni_code = .data$kommunekode,
+                  muni = .data$kommunenavn,
+                  regi_code = .data$regionskode,
+                  regi = .data$regionsnavn,
+                  kreds_id = .data$opstillingskredsnummer,
+                  kreds = .data$opstillingskredsnavn,
+                  stkreds_id = .data$storkredsnummer,
+                  stkreds = .data$storkredsnavn,
+                  valg_ld_l = .data$valglandsdelsbogstav,
+                  valg_ld = .data$valglandsdelsnavn,
+                  edit = .data$aendret,
+                  geo_edit = .data$geo_aendret,
+                  geo_v = .data$geo_version,
+                  vcent_lon = .data$visueltcenter_x,
+                  vcent_lat = .data$visueltcenter_y) %>%
     sf::st_as_sf() %>%
     sf::st_cast("MULTIPOLYGON")
 
   ps <- ps %>%
-    dplyr::mutate(edit = lubridate::ymd_hms(edit),
-                  geo_edit = lubridate::ymd_hms(geo_edit)) %>%
-    dplyr::mutate(edit = as.character(edit),
-                  geo_edit = as.character(geo_edit))
+    dplyr::mutate(edit = lubridate::ymd_hms(.data$edit),
+                  geo_edit = lubridate::ymd_hms(.data$geo_edit)) %>%
+    dplyr::mutate(edit = as.character(.data$edit),
+                  geo_edit = as.character(.data$geo_edit))
 
 
   if (spatial == TRUE) {
@@ -55,7 +55,7 @@ getPS <- function(spatial = TRUE) {
 
     ps <- ps %>%
       tibble::tibble() %>%
-      dplyr::select(-geometry)
+      dplyr::select(-.data$geometry)
 
   }
 
