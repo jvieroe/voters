@@ -1,2 +1,7 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # voters
-get spatial data on Danish polling stations
+
+<!-- badges: start -->
+<!-- badges: end -->
