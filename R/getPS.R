@@ -6,7 +6,7 @@
 #' @examples
 #' voting_stations <- getPS()
 #' @author Jeppe Vierø
-#' @import sf rgdal janitor lubridate tibble dplyr
+#' @import sf rgdal janitor lubridate tibble dplyr magrittr
 #' @export
 
 getPS <- function(spatial = TRUE) {
