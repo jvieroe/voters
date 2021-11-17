@@ -43,8 +43,8 @@ getPS <- function(spatial = TRUE) {
   ps <- ps %>%
     dplyr::mutate(edit = lubridate::ymd_hms(.data$edit),
                   geo_edit = lubridate::ymd_hms(.data$geo_edit)) %>%
-    dplyr::mutate(edit = as.character(.data$edit),
-                  geo_edit = as.character(.data$geo_edit))
+    dplyr::mutate(edit = base::as.character(.data$edit),
+                  geo_edit = base::as.character(.data$geo_edit))
 
 
   if (spatial == TRUE) {
