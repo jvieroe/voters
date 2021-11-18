@@ -20,12 +20,15 @@ polling stations.
 
 ## Terms of use
 
-Data is provided through [Danmarks Adressers Web API
+The primary data is provided through [Danmarks Adressers Web API
 (DAWA)](https://dawadocs.dataforsyningen.dk/). DAWA is developed and run
 by the [Danish Agency for Data Supply and Efficiency
 (SDFE)](https://eng.sdfe.dk/). SDFE’s [terms of
 use](https://download.kortforsyningen.dk/content/vilk%C3%A5r-og-betingelser)
 apply.
+
+Additional data is provided the [Danish Election
+Database](https://valgdatabase.dst.dk/?lang=en).
 
 ## Usage
 
@@ -114,6 +117,7 @@ devtools::install_github("jvieroe/voters")
 -   [Danmarks Adressers Web API
     (DAWA)](https://dawadocs.dataforsyningen.dk/) for the data and the
     API functionality
+-   [Den Danske Valgdatabase](https://valgdatabase.dst.dk/) for data
 -   Frederik Hjorth ([fghjorth](http://fghjorth.github.io/)) and Bo
     Schwartz Madsen
     ([BoSchwartz](https://twitter.com/boschwartz?lang=en)) for
