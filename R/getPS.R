@@ -13,6 +13,8 @@ getPS <- function(spatial = TRUE) {
 
   ps <- sf::read_sf("https://api.dataforsyningen.dk/afstemningsomraader?format=geojson")
 
+  labelled::var_label(ps) <- base::colnames(ps)
+
   ps <- ps %>%
     tibble::tibble() %>%
     janitor::clean_names() %>%
