@@ -66,9 +66,9 @@ df
 #> #   vcent_lon <dbl>, vcent_lat <dbl>, geometry <MULTIPOLYGON [°]>
 ```
 
-### Output specification
+## Output specification
 
-#### Data format
+### Data format
 
 As a default, data is downloaded as a spatial dataset of type
 `"sf", "tibble"`:
@@ -105,7 +105,7 @@ class(df_raw)
 #> [1] "tbl_df"     "tbl"        "data.frame"
 ```
 
-#### Polling station `id`
+### Polling station `id`
 
 By default, `getPS()` returns an ID variable (`ps_id`). This provides a
 way to link the polling station data to election results from the
