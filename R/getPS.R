@@ -24,8 +24,8 @@ getPS <- function(spatial = TRUE,
     tibble::tibble() %>%
     janitor::clean_names() %>%
     dplyr::rename(dagi_id = .data$dagi_id,
-                  number = nummer,
-                  name = navn,
+                  number = .data$nummer,
+                  name = .data$navn,
                   station = .data$afstemningsstednavn,
                   st_id = .data$afstemningsstedadresseid,
                   st_add = .data$afstemningsstedadressebetegnelse,
@@ -54,8 +54,8 @@ getPS <- function(spatial = TRUE,
                   geo_edit = lubridate::ymd_hms(.data$geo_edit)) %>%
     dplyr::mutate(edit = base::as.character(.data$edit),
                   geo_edit = base::as.character(.data$geo_edit)) %>%
-    dplyr::mutate(muni_code = as.numeric(muni_code),
-                  regi_code = as.numeric(regi_code))
+    dplyr::mutate(muni_code = as.numeric(.data$muni_code),
+                  regi_code = as.numeric(.data$regi_code))
 
 
   if (spatial == TRUE) {
@@ -79,8 +79,8 @@ getPS <- function(spatial = TRUE,
                               "muni_code" = "KommuneNr")) %>%
       dplyr::select(c("dagi_id",
                       "ps_id",
-                      base::setdiff(names(.), c("dagi_id",
-                                                "ps_id"))))
+                      base::setdiff(names(psss), c("dagi_id",
+                                                   "ps_id"))))
 
 
   } else if (id == FALSE) {
