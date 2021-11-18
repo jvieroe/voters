@@ -66,6 +66,10 @@ df
 #> #   vcent_lon <dbl>, vcent_lat <dbl>, geometry <MULTIPOLYGON [°]>
 ```
 
+### Output specification
+
+#### Data format
+
 As a default, data is downloaded as a spatial dataset of type
 `"sf", "tibble"`:
 
@@ -96,9 +100,23 @@ df %>%
 To download a non-spatial version simply use the `spatial` argument:
 
 ``` r
-df_raw <- getPS(spatial = FALSE)
-class(df_raw)
-#> [1] "tbl_df"     "tbl"        "data.frame"
+#df_raw <- getPS(spatial = FALSE)
+#class(df_raw)
+```
+
+#### Polling station `id`
+
+By default, `getPS()` returns an ID variable (`ps_id`). This provides a
+way to link the polling station data to election results from the
+[Danish Election Database](https://valgdatabase.dst.dk/?lang=en).
+
+Note that as of November 18 2021, the Danish Election Database has not
+been updated to match the updated polling stations provided by
+`getPS()`. As a result, some stations remain without a valid ID:
+
+``` r
+table(is.na(df$ps_id))
+#> < table of extent 0 >
 ```
 
 ## Installation
@@ -117,7 +135,8 @@ devtools::install_github("jvieroe/voters")
 -   [Danmarks Adressers Web API
     (DAWA)](https://dawadocs.dataforsyningen.dk/) for the data and the
     API functionality
--   [Den Danske Valgdatabase](https://valgdatabase.dst.dk/) for data
+-   [Danish Election Database](https://valgdatabase.dst.dk/?lang=en) for
+    data
 -   Frederik Hjorth ([fghjorth](http://fghjorth.github.io/)) and Bo
     Schwartz Madsen
     ([BoSchwartz](https://twitter.com/boschwartz?lang=en)) for
