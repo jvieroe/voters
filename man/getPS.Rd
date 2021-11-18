@@ -4,7 +4,7 @@
 \alias{getPS}
 \title{Get voting station data}
 \usage{
-getPS(spatial = TRUE)
+getPS(spatial = TRUE, id = TRUE)
 }
 \arguments{
 \item{spatial}{a logical value. Return data of class \code{sf}? Defaults to \code{TRUE}}

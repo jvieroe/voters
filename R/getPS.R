@@ -9,9 +9,11 @@
 #' @import sf rgdal janitor lubridate tibble dplyr magrittr labelled
 #' @export
 
-getPS <- function(spatial = TRUE) {
+getPS <- function(spatial = TRUE,
+                  id = TRUE) {
 
-  check_getPS(spatial = spatial)
+  check_getPS(spatial = spatial,
+              id = id)
 
   ps <- sf::read_sf("https://api.dataforsyningen.dk/afstemningsomraader?format=geojson")
 
@@ -57,16 +59,35 @@ getPS <- function(spatial = TRUE) {
 
   if (spatial == TRUE) {
 
-    ps <- ps
+    pss <- ps
 
   } else if (spatial == FALSE) {
 
-    ps <- ps %>%
+    pss <- ps %>%
       tibble::tibble() %>%
       dplyr::select(-.data$geometry)
 
   }
 
-  return(ps)
+  if (id == TRUE) {
+
+    psss <- pss %>%
+      dplyr::left_join(.,
+                       voters::vs,
+                       by = c("name" = "Valgsted.navn",
+                              "muni_code" = "KommuneNr")) %>%
+      dplyr::select(c("dagi_id",
+                      "ps_id",
+                      base::setdiff(names(.), c("dagi_id",
+                                                "ps_id"))))
+
+
+  } else if (id == FALSE) {
+
+    psss <- pss
+
+  }
+
+  return(psss)
 
 }
