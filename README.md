@@ -111,7 +111,9 @@ devtools::install_github("jvieroe/voters")
 
 # Acknowledgements
 
--   The `R` Core Team for developing and maintaining the language
 -   [Danmarks Adressers Web API
     (DAWA)](https://dawadocs.dataforsyningen.dk/) for the data and the
     API functionality
+-   Frederik Hjorth ([fghjorth](http://fghjorth.github.io/)) for
+    development ideas
+-   The `R` Core Team for developing and maintaining the language
