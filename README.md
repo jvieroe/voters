@@ -15,9 +15,13 @@
 
 # Introduction
 
-The purpose of `repinion` is
+The purpose of `voters` is to provide easy access to data on Danish
+polling stations.
 
 ## Usage
+
+Download data on Danish polling stations using the `voters::getPS()`
+function:
 
 ``` r
 library(voters)
@@ -52,26 +56,12 @@ class(df)
 #> [1] "sf"         "tbl_df"     "tbl"        "data.frame"
 ```
 
+As a default, data is downloaded as a spatial dataset of type
+`"sf", "tibble"`. To download a non-spatial version simply use the
+`spatial` argument:
+
 ``` r
 df <- getPS(spatial = FALSE)
-df
-#> # A tibble: 1,384 x 23
-#>    dagi_ID nummer navn   station   st_id  st_add   st_lon st_lat muni_code muni 
-#>    <chr>   <chr>  <chr>  <chr>     <chr>  <chr>     <dbl>  <dbl> <chr>     <chr>
-#>  1 707732  1      1. Øs~ Idrætshu~ 0a3f5~ Gunnar ~   12.6   55.7 0101      Købe~
-#>  2 711932  2      1. No~ Strandve~ 0a3f5~ Sionsga~   12.6   55.7 0101      Købe~
-#>  3 704936  3      1. Syd Remisen   0a3f5~ Blegdam~   12.6   55.7 0101      Købe~
-#>  4 706160  5      1. Ve~ Nørre Fæ~ 0a3f5~ Biskop ~   12.6   55.7 0101      Købe~
-#>  5 710802  6      1. No~ Kildevæl~ 0a3f5~ Bellman~   12.6   55.7 0101      Købe~
-#>  6 711204  7      2. Su~ Sundby I~ 0a3f5~ England~   12.6   55.7 0101      Købe~
-#>  7 706166  8      2. No~ Amager F~ 0a3f5~ Sundhol~   12.6   55.7 0101      Købe~
-#>  8 706562  9      2. Syd Ørestad ~ 20d73~ Arne Ja~   12.6   55.6 0101      Købe~
-#>  9 712286  10     2. Ve~ Skolen p~ 0a3f5~ Artille~   12.6   55.7 0101      Købe~
-#> 10 711926  11     3. In~ Rådhusha~ 0a3f5~ Rådhusp~   12.6   55.7 0101      Købe~
-#> # ... with 1,374 more rows, and 13 more variables: regi_code <chr>, regi <chr>,
-#> #   kreds_id <chr>, kreds <chr>, stkreds_id <chr>, stkreds <chr>,
-#> #   valg_ld_l <chr>, valg_ld <chr>, edit <chr>, geo_edit <chr>, geo_v <int>,
-#> #   vcent_lon <dbl>, vcent_lat <dbl>
 class(df)
 #> [1] "tbl_df"     "tbl"        "data.frame"
 ```
@@ -86,3 +76,9 @@ if(!require("devtools")) install.packages("devtools")
 library(devtools)
 devtools::install_github("jvieroe/voters")
 ```
+
+# Acknowledgements
+
+-   The `R` Core Team for developing and maintaining the language
+-   [Danmarks Adressers Web API
+    (DAWA)](https://dawadocs.dataforsyningen.dk/)

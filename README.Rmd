@@ -27,10 +27,12 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-The purpose of `repinion` is 
+The purpose of `voters` is to provide easy access to data on Danish polling stations.
 
 
 ## Usage
+
+Download data on Danish polling stations using the `voters::getPS()` function:
 
 ```{r warning=F, message=F}
 library(voters)
@@ -41,9 +43,9 @@ df <- getPS()
 df
 class(df)
 ```
+As a default, data is downloaded as a spatial dataset of type `"sf", "tibble"`. To download a non-spatial version simply use the `spatial` argument:
 ```{r warning=F, message=F}
 df <- getPS(spatial = FALSE)
-df
 class(df)
 ```
 
@@ -56,4 +58,9 @@ if(!require("devtools")) install.packages("devtools")
 library(devtools)
 devtools::install_github("jvieroe/voters")
 ```
+
+# Acknowledgements
+
+* The `R` Core Team for developing and maintaining the language
+* [Danmarks Adressers Web API (DAWA)](https://dawadocs.dataforsyningen.dk/)
 
