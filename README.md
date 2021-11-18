@@ -18,6 +18,15 @@
 The purpose of `voters` is to provide easy access to data on Danish
 polling stations.
 
+## Terms of use
+
+Data is provided through [Danmarks Adressers Web API
+(DAWA)](https://dawadocs.dataforsyningen.dk/). DAWA is developed and run
+by the [Danish Agency for Data Supply and Efficiency
+(SDFE)](https://eng.sdfe.dk/). SDFE’s [terms of
+use](https://download.kortforsyningen.dk/content/vilk%C3%A5r-og-betingelser)
+apply.
+
 ## Usage
 
 Download data on Danish polling stations using the `voters::getPS()`
@@ -57,12 +66,18 @@ class(df)
 ```
 
 As a default, data is downloaded as a spatial dataset of type
-`"sf", "tibble"`. To download a non-spatial version simply use the
-`spatial` argument:
+`"sf", "tibble"`:
 
 ``` r
-df <- getPS(spatial = FALSE)
 class(df)
+#> [1] "sf"         "tbl_df"     "tbl"        "data.frame"
+```
+
+To download a non-spatial version simply use the `spatial` argument:
+
+``` r
+df_raw <- getPS(spatial = FALSE)
+class(df_raw)
 #> [1] "tbl_df"     "tbl"        "data.frame"
 ```
 
@@ -81,4 +96,5 @@ devtools::install_github("jvieroe/voters")
 
 -   The `R` Core Team for developing and maintaining the language
 -   [Danmarks Adressers Web API
-    (DAWA)](https://dawadocs.dataforsyningen.dk/)
+    (DAWA)](https://dawadocs.dataforsyningen.dk/) for the data and the
+    API functionality

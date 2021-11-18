@@ -11,6 +11,8 @@
 
 getPS <- function(spatial = TRUE) {
 
+  check_getPS(spatial = spatial)
+
   ps <- sf::read_sf("https://api.dataforsyningen.dk/afstemningsomraader?format=geojson")
 
   labelled::var_label(ps) <- base::colnames(ps)
