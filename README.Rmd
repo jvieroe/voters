@@ -44,19 +44,36 @@ library(voters)
 ```{r warning=F, message=F}
 df <- getPS()
 df
-class(df)
 ```
+
 As a default, data is downloaded as a spatial dataset of type `"sf", "tibble"`:
 
 ```{r warning=F, message=F}
 class(df)
 ```
 
+```{r warning=F, message=F}
+library(ggplot2)
+library(Manu)
+library(ggpubr)
+
+df %>% 
+  filter(stkreds %in% c("København", "Københavns Omegn")) %>% 
+  ggplot(data = .) +
+  geom_sf(aes(fill = stkreds),
+          color = "grey90",
+          size = .0000000001) +
+    scale_fill_manual(values = Manu::get_pal("Takahe"),
+                      name = "") +
+  theme_void()
+
+```
+
 To download a non-spatial version simply use the `spatial` argument:
 
 ```{r warning=F, message=F}
-df_raw <- getPS(spatial = FALSE)
-class(df_raw)
+#df_raw <- getPS(spatial = FALSE)
+#class(df_raw)
 ```
 
 ## Installation
