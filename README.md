@@ -93,8 +93,9 @@ df %>%
 To download a non-spatial version simply use the `spatial` argument:
 
 ``` r
-#df_raw <- getPS(spatial = FALSE)
-#class(df_raw)
+df_raw <- getPS(spatial = FALSE)
+class(df_raw)
+#> [1] "tbl_df"     "tbl"        "data.frame"
 ```
 
 ## Installation
