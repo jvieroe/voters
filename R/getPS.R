@@ -73,13 +73,12 @@ getPS <- function(spatial = TRUE,
   if (id == TRUE) {
 
     psss <- pss %>%
-      dplyr::left_join(.,
-                       voters::vs,
+      dplyr::left_join(voters::vs,
                        by = c("name" = "Valgsted.navn",
                               "muni_code" = "KommuneNr")) %>%
       dplyr::select(c("dagi_id",
                       "ps_id",
-                      base::setdiff(names(psss), c("dagi_id",
+                      base::setdiff(names(pss), c("dagi_id",
                                                    "ps_id"))))
 
 
