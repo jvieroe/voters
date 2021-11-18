@@ -2,6 +2,7 @@
 #'
 #' This function extracts spatial data on voting stations in Denmark from \url{https://info.aws.dk/afstemningsomraader/}
 #' @param spatial a logical value. Return data of class `sf`? Defaults to `TRUE`
+#' @param id a logical value. Return a numeric ID as a link to the election results data from \url{https://valgdatabase.dst.dk/?lang=en}. Defaults to TRUE
 #' @return data on danish voting stations
 #' @examples
 #' voting_stations <- getPS()

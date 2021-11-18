@@ -8,6 +8,8 @@ getPS(spatial = TRUE, id = TRUE)
 }
 \arguments{
 \item{spatial}{a logical value. Return data of class \code{sf}? Defaults to \code{TRUE}}
+
+\item{id}{a logical value. Return a numeric ID as a link to the election results data from \url{https://valgdatabase.dst.dk/?lang=en}. Defaults to TRUE}
 }
 \value{
 data on danish voting stations
