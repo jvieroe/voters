@@ -79,12 +79,13 @@ library(ggpubr)
 df %>% 
   #filter(stkreds %in% c("København", "Københavns Omegn")) %>% 
   ggplot(data = .) +
-  geom_sf(aes(fill = stkreds),
+  geom_sf(aes(fill = regi),
           color = "grey90",
           size = .0000000001) +
-  # scale_fill_manual(values = Manu::get_pal("Takahe"),
-  #                     name = "") +
-  theme_void()
+  scale_fill_manual(values = Manu::get_pal("Takahe"),
+                      name = "") +
+  theme_void() +
+  ggpubr::theme_transparent()
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="85%" style="display: block; margin: auto;" />

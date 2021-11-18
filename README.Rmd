@@ -60,20 +60,21 @@ library(ggpubr)
 df %>% 
   #filter(stkreds %in% c("København", "Københavns Omegn")) %>% 
   ggplot(data = .) +
-  geom_sf(aes(fill = stkreds),
+  geom_sf(aes(fill = regi),
           color = "grey90",
           size = .0000000001) +
-  # scale_fill_manual(values = Manu::get_pal("Takahe"),
-  #                     name = "") +
-  theme_void()
+  scale_fill_manual(values = Manu::get_pal("Takahe"),
+                      name = "") +
+  theme_void() +
+  ggpubr::theme_transparent()
 
 ```
 
 To download a non-spatial version simply use the `spatial` argument:
 
 ```{r warning=F, message=F}
-#df_raw <- getPS(spatial = FALSE)
-#class(df_raw)
+df_raw <- getPS(spatial = FALSE)
+class(df_raw)
 ```
 
 ## Installation
