@@ -8,6 +8,6 @@ vs <- vs %>%
                   Valgsted.Id,
                   KommuneNr)) %>%
   dplyr::rename(ps_id = Valgsted.Id) %>%
-  tibble()
+  tibble::tibble()
 
-usethis::use_data(vs, overwrite = TRUE, internal = TRUE)
+usethis::use_data(vs, overwrite = TRUE, internal = FALSE)
