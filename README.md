@@ -66,18 +66,6 @@ df
 #> #   vcent_lon <dbl>, vcent_lat <dbl>, geometry <MULTIPOLYGON [°]>
 ```
 
-## Output specification
-
-### Data format
-
-As a default, data is downloaded as a spatial dataset of type
-`"sf", "tibble"`:
-
-``` r
-class(df)
-#> [1] "sf"         "tbl_df"     "tbl"        "data.frame"
-```
-
 ``` r
 library(ggplot2)
 library(Manu)
@@ -95,7 +83,19 @@ df %>%
   ggpubr::theme_transparent()
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="85%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="85%" style="display: block; margin: auto;" />
+
+## Output specification
+
+### Data format
+
+As a default, data is downloaded as a spatial dataset of type
+`"sf", "tibble"`:
+
+``` r
+class(df)
+#> [1] "sf"         "tbl_df"     "tbl"        "data.frame"
+```
 
 To download a non-spatial version simply use the `spatial` argument:
 

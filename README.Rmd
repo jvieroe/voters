@@ -48,16 +48,6 @@ df <- getPS()
 df
 ```
 
-## Output specification
-
-### Data format
-
-As a default, data is downloaded as a spatial dataset of type `"sf", "tibble"`:
-
-```{r warning=F, message=F}
-class(df)
-```
-
 ```{r warning=F, message=F}
 library(ggplot2)
 library(Manu)
@@ -74,6 +64,16 @@ df %>%
   theme_void() +
   ggpubr::theme_transparent()
 
+```
+
+## Output specification
+
+### Data format
+
+As a default, data is downloaded as a spatial dataset of type `"sf", "tibble"`:
+
+```{r warning=F, message=F}
+class(df)
 ```
 
 To download a non-spatial version simply use the `spatial` argument:
@@ -94,6 +94,7 @@ Note that as of November 18, 2021, the Danish Election Database has not been upd
 table(is.na(df$ps_id))
 
 ```
+
 Specify `id = FALSE` to export data without the [Danish Election Database](https://valgdatabase.dst.dk/?lang=en) ID.
 
 
