@@ -21,6 +21,8 @@ getPS <- function(spatial = TRUE) {
     tibble::tibble() %>%
     janitor::clean_names() %>%
     dplyr::rename(dagi_ID = .data$dagi_id,
+                  number = nummer,
+                  name = navn,
                   station = .data$afstemningsstednavn,
                   st_id = .data$afstemningsstedadresseid,
                   st_add = .data$afstemningsstedadressebetegnelse,
