@@ -10,4 +10,10 @@ vs <- vs %>%
   dplyr::rename(ps_id = Valgsted.Id) %>%
   tibble::tibble()
 
+Encoding(vs$Valgsted.navn) <- "latin1"
+Encoding(vs$Valgsted.navn)
+Encoding(vs$Valgsted.navn) <- "UTF-8"
+Encoding(vs$Valgsted.navn)
+
 usethis::use_data(vs, overwrite = TRUE, internal = FALSE)
+
