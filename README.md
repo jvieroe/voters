@@ -42,26 +42,26 @@ library(voters)
 ``` r
 df <- getPS()
 df
-#> Simple feature collection with 1384 features and 23 fields
+#> Simple feature collection with 1384 features and 24 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
 #> Bounding box:  xmin: 8.07251 ymin: 54.55908 xmax: 15.1974 ymax: 57.75257
 #> Geodetic CRS:  WGS 84
-#> # A tibble: 1,384 x 24
-#>    dagi_ID nummer navn   station   st_id  st_add   st_lon st_lat muni_code muni 
-#>  * <chr>   <chr>  <chr>  <chr>     <chr>  <chr>     <dbl>  <dbl> <chr>     <chr>
-#>  1 707732  1      1. Øs~ Idrætshu~ 0a3f5~ Gunnar ~   12.6   55.7 0101      Købe~
-#>  2 711932  2      1. No~ Strandve~ 0a3f5~ Sionsga~   12.6   55.7 0101      Købe~
-#>  3 704936  3      1. Syd Remisen   0a3f5~ Blegdam~   12.6   55.7 0101      Købe~
-#>  4 706160  5      1. Ve~ Nørre Fæ~ 0a3f5~ Biskop ~   12.6   55.7 0101      Købe~
-#>  5 710802  6      1. No~ Kildevæl~ 0a3f5~ Bellman~   12.6   55.7 0101      Købe~
-#>  6 711204  7      2. Su~ Sundby I~ 0a3f5~ England~   12.6   55.7 0101      Købe~
-#>  7 706166  8      2. No~ Amager F~ 0a3f5~ Sundhol~   12.6   55.7 0101      Købe~
-#>  8 706562  9      2. Syd Ørestad ~ 20d73~ Arne Ja~   12.6   55.6 0101      Købe~
-#>  9 712286  10     2. Ve~ Skolen p~ 0a3f5~ Artille~   12.6   55.7 0101      Købe~
-#> 10 711926  11     3. In~ Rådhusha~ 0a3f5~ Rådhusp~   12.6   55.7 0101      Købe~
-#> # ... with 1,374 more rows, and 14 more variables: regi_code <chr>, regi <chr>,
-#> #   kreds_id <chr>, kreds <chr>, stkreds_id <chr>, stkreds <chr>,
+#> # A tibble: 1,384 x 25
+#>    dagi_id  ps_id number name   station  st_id   st_add  st_lon st_lat muni_code
+#>    <chr>    <int> <chr>  <chr>  <chr>    <chr>   <chr>    <dbl>  <dbl>     <dbl>
+#>  1 707732  101001 1      1. Øs~ Idrætsh~ 0a3f50~ Gunnar~   12.6   55.7       101
+#>  2 711932  101002 2      1. No~ Strandv~ 0a3f50~ Sionsg~   12.6   55.7       101
+#>  3 704936  101003 3      1. Syd Remisen  0a3f50~ Blegda~   12.6   55.7       101
+#>  4 706160  101005 5      1. Ve~ Nørre F~ 0a3f50~ Biskop~   12.6   55.7       101
+#>  5 710802  101006 6      1. No~ Kildevæ~ 0a3f50~ Bellma~   12.6   55.7       101
+#>  6 711204  101007 7      2. Su~ Sundby ~ 0a3f50~ Englan~   12.6   55.7       101
+#>  7 706166  101008 8      2. No~ Amager ~ 0a3f50~ Sundho~   12.6   55.7       101
+#>  8 706562  101009 9      2. Syd Ørestad~ 20d737~ Arne J~   12.6   55.6       101
+#>  9 712286  101010 10     2. Ve~ Skolen ~ 0a3f50~ Artill~   12.6   55.7       101
+#> 10 711926  101011 11     3. In~ Rådhush~ 0a3f50~ Rådhus~   12.6   55.7       101
+#> # ... with 1,374 more rows, and 15 more variables: muni <chr>, regi_code <dbl>,
+#> #   regi <chr>, kreds_id <chr>, kreds <chr>, stkreds_id <chr>, stkreds <chr>,
 #> #   valg_ld_l <chr>, valg_ld <chr>, edit <chr>, geo_edit <chr>, geo_v <int>,
 #> #   vcent_lon <dbl>, vcent_lat <dbl>, geometry <MULTIPOLYGON [°]>
 ```
@@ -100,8 +100,9 @@ df %>%
 To download a non-spatial version simply use the `spatial` argument:
 
 ``` r
-#df_raw <- getPS(spatial = FALSE)
-#class(df_raw)
+df_raw <- getPS(spatial = FALSE)
+class(df_raw)
+#> [1] "tbl_df"     "tbl"        "data.frame"
 ```
 
 #### Polling station `id`
@@ -110,14 +111,19 @@ By default, `getPS()` returns an ID variable (`ps_id`). This provides a
 way to link the polling station data to election results from the
 [Danish Election Database](https://valgdatabase.dst.dk/?lang=en).
 
-Note that as of November 18 2021, the Danish Election Database has not
+Note that as of November 18, 2021, the Danish Election Database has not
 been updated to match the updated polling stations provided by
 `getPS()`. As a result, some stations remain without a valid ID:
 
 ``` r
 table(is.na(df$ps_id))
-#> < table of extent 0 >
+#> 
+#> FALSE  TRUE 
+#>  1335    49
 ```
+
+Specify `id = FALSE` to export data without the [Danish Election
+Database](https://valgdatabase.dst.dk/?lang=en) ID.
 
 ## Installation
 
