@@ -58,13 +58,13 @@ library(Manu)
 library(ggpubr)
 
 df %>% 
-  filter(stkreds %in% c("København", "Københavns Omegn")) %>% 
+  #filter(stkreds %in% c("København", "Københavns Omegn")) %>% 
   ggplot(data = .) +
   geom_sf(aes(fill = stkreds),
           color = "grey90",
           size = .0000000001) +
-    scale_fill_manual(values = Manu::get_pal("Takahe"),
-                      name = "") +
+  # scale_fill_manual(values = Manu::get_pal("Takahe"),
+  #                     name = "") +
   theme_void()
 
 ```

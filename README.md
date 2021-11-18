@@ -61,8 +61,6 @@ df
 #> #   kreds_id <chr>, kreds <chr>, stkreds_id <chr>, stkreds <chr>,
 #> #   valg_ld_l <chr>, valg_ld <chr>, edit <chr>, geo_edit <chr>, geo_v <int>,
 #> #   vcent_lon <dbl>, vcent_lat <dbl>, geometry <MULTIPOLYGON [°]>
-class(df)
-#> [1] "sf"         "tbl_df"     "tbl"        "data.frame"
 ```
 
 As a default, data is downloaded as a spatial dataset of type
@@ -73,12 +71,29 @@ class(df)
 #> [1] "sf"         "tbl_df"     "tbl"        "data.frame"
 ```
 
+``` r
+library(ggplot2)
+library(Manu)
+library(ggpubr)
+
+df %>% 
+  #filter(stkreds %in% c("København", "Københavns Omegn")) %>% 
+  ggplot(data = .) +
+  geom_sf(aes(fill = stkreds),
+          color = "grey90",
+          size = .0000000001) +
+  # scale_fill_manual(values = Manu::get_pal("Takahe"),
+  #                     name = "") +
+  theme_void()
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="85%" style="display: block; margin: auto;" />
+
 To download a non-spatial version simply use the `spatial` argument:
 
 ``` r
-df_raw <- getPS(spatial = FALSE)
-class(df_raw)
-#> [1] "tbl_df"     "tbl"        "data.frame"
+#df_raw <- getPS(spatial = FALSE)
+#class(df_raw)
 ```
 
 ## Installation
