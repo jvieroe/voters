@@ -7,8 +7,8 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/jvieroe/voters/badge)](https://www.codefactor.io/repository/github/jvieroe/voters)
 [![R-CMD-check](https://github.com/jvieroe/voters/workflows/R-CMD-check/badge.svg)](https://github.com/jvieroe/voters/actions)
-[![License: GPL (>=
-3)](https://img.shields.io/badge/license-GPL%20(%3E=%203)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20(%3E=%203))
+[![License: GPL
+(\>= 3)](https://img.shields.io/badge/license-GPL%20\(%3E=%203\)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20\(%3E=%203\))
 [![](https://img.shields.io/github/last-commit/https://github.com/jvieroe/voters.svg)](https://github.com/https://github.com/jvieroe/voters/commits/main)
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
@@ -27,7 +27,7 @@ by the [Danish Agency for Data Supply and Efficiency
 use](https://download.kortforsyningen.dk/content/vilk%C3%A5r-og-betingelser)
 apply.
 
-Additional data is provided the [Danish Election
+Additional data is provided by the [Danish Election
 Database](https://valgdatabase.dst.dk/?lang=en).
 
 ## Usage
@@ -47,20 +47,20 @@ df
 #> Dimension:     XY
 #> Bounding box:  xmin: 8.07251 ymin: 54.55908 xmax: 15.1974 ymax: 57.75257
 #> Geodetic CRS:  WGS 84
-#> # A tibble: 1,384 x 25
+#> # A tibble: 1,384 × 25
 #>    dagi_id  ps_id number name   station  st_id   st_add  st_lon st_lat muni_code
 #>    <chr>    <int> <chr>  <chr>  <chr>    <chr>   <chr>    <dbl>  <dbl>     <dbl>
-#>  1 707732  101001 1      1. Øs~ Idrætsh~ 0a3f50~ Gunnar~   12.6   55.7       101
-#>  2 711932  101002 2      1. No~ Strandv~ 0a3f50~ Sionsg~   12.6   55.7       101
-#>  3 704936  101003 3      1. Syd Remisen  0a3f50~ Blegda~   12.6   55.7       101
-#>  4 706160  101005 5      1. Ve~ Nørre F~ 0a3f50~ Biskop~   12.6   55.7       101
-#>  5 710802  101006 6      1. No~ Kildevæ~ 0a3f50~ Bellma~   12.6   55.7       101
-#>  6 711204  101007 7      2. Su~ Sundby ~ 0a3f50~ Englan~   12.6   55.7       101
-#>  7 706166  101008 8      2. No~ Amager ~ 0a3f50~ Sundho~   12.6   55.7       101
-#>  8 706562  101009 9      2. Syd Ørestad~ 20d737~ Arne J~   12.6   55.6       101
-#>  9 712286  101010 10     2. Ve~ Skolen ~ 0a3f50~ Artill~   12.6   55.7       101
-#> 10 711926  101011 11     3. In~ Rådhush~ 0a3f50~ Rådhus~   12.6   55.7       101
-#> # ... with 1,374 more rows, and 15 more variables: muni <chr>, regi_code <dbl>,
+#>  1 707732      NA 1      1. Øs… Idrætsh… 0a3f50… Gunnar…   12.6   55.7       101
+#>  2 711932  101002 2      1. No… Strandv… 0a3f50… Sionsg…   12.6   55.7       101
+#>  3 704936  101003 3      1. Syd Remisen  0a3f50… Blegda…   12.6   55.7       101
+#>  4 706160  101005 5      1. Ve… Nørre F… 0a3f50… Biskop…   12.6   55.7       101
+#>  5 710802  101006 6      1. No… Kildevæ… 0a3f50… Bellma…   12.6   55.7       101
+#>  6 711204  101007 7      2. Su… Sundby … 0a3f50… Englan…   12.6   55.7       101
+#>  7 706166  101008 8      2. No… Amager … 0a3f50… Sundho…   12.6   55.7       101
+#>  8 706562  101009 9      2. Syd Ørestad… 20d737… Arne J…   12.6   55.6       101
+#>  9 712286  101010 10     2. Ve… Skolen … 0a3f50… Artill…   12.6   55.7       101
+#> 10 711926  101011 11     3. In… Rådhush… 0a3f50… Rådhus…   12.6   55.7       101
+#> # … with 1,374 more rows, and 15 more variables: muni <chr>, regi_code <dbl>,
 #> #   regi <chr>, kreds_id <chr>, kreds <chr>, stkreds_id <chr>, stkreds <chr>,
 #> #   valg_ld_l <chr>, valg_ld <chr>, edit <chr>, geo_edit <chr>, geo_v <int>,
 #> #   vcent_lon <dbl>, vcent_lat <dbl>, geometry <MULTIPOLYGON [°]>
@@ -89,8 +89,8 @@ df %>%
 
 ### Data format
 
-As a default, data is downloaded as a spatial dataset of type
-`"sf", "tibble"`:
+As a default, data is downloaded as a spatial dataset of type `"sf",
+"tibble"`:
 
 ``` r
 class(df)
@@ -119,7 +119,7 @@ been updated to match the updated polling stations provided by
 table(is.na(df$ps_id))
 #> 
 #> FALSE  TRUE 
-#>  1335    49
+#>   821   563
 ```
 
 Specify `id = FALSE` to export data without the [Danish Election
@@ -138,13 +138,13 @@ devtools::install_github("jvieroe/voters")
 
 # Acknowledgements
 
--   [Danmarks Adressers Web API
+  - [Danmarks Adressers Web API
     (DAWA)](https://dawadocs.dataforsyningen.dk/) for the data and the
     API functionality
--   [Danish Election Database](https://valgdatabase.dst.dk/?lang=en) for
+  - [Danish Election Database](https://valgdatabase.dst.dk/?lang=en) for
     data
--   Frederik Hjorth ([fghjorth](http://fghjorth.github.io/)) and Bo
+  - Frederik Hjorth ([fghjorth](http://fghjorth.github.io/)) and Bo
     Schwartz Madsen
     ([BoSchwartz](https://twitter.com/boschwartz?lang=en)) for
     development ideas
--   The `R` Core Team for developing and maintaining the language
+  - The `R` Core Team for developing and maintaining the language

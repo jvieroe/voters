@@ -32,7 +32,7 @@ The purpose of `voters` is to provide easy access to data on Danish polling stat
 ## Terms of use
 The primary data is provided through [Danmarks Adressers Web API (DAWA)](https://dawadocs.dataforsyningen.dk/). DAWA is developed and run by the [Danish Agency for Data Supply and Efficiency (SDFE)](https://eng.sdfe.dk/). SDFE's [terms of use](https://download.kortforsyningen.dk/content/vilk%C3%A5r-og-betingelser) apply.
 
-Additional data is provided the [Danish Election Database](https://valgdatabase.dst.dk/?lang=en). 
+Additional data is provided by the [Danish Election Database](https://valgdatabase.dst.dk/?lang=en). 
 
 
 ## Usage
