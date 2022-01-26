@@ -13,6 +13,10 @@ test_that("output format works", {
                "tbl_df")
 })
 
+test_that("id argument works", {
+  expect_equal("ps_id" %in% names(voters::getPS()),
+               TRUE)
+})
 
 test_that("id argument works", {
   expect_equal("ps_id" %in% names(voters::getPS(id = TRUE)),
