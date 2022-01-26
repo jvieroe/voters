@@ -25,10 +25,3 @@ test_that("id argument works", {
                FALSE)
 })
 
-
-df <- voters::getPS(id = TRUE)
-
-df2 <- voters::getPS(id = FALSE)
-
-
-"ps_id" %in% names(df)

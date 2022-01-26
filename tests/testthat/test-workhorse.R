@@ -31,7 +31,7 @@ test_that(
 test_that(
   "argument errors work: id", {
 
-    expect_error(voters::getPS(id = 1),
+    expect_error(voters::getPS(id = 2),
                  regexp = "Invalid 'id' argument provided. Must be logical")
 
 
