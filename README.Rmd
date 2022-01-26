@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# voters
+# voters <img src='man/figures/logo_edit.png' align="right" height="189" />
 
 
 <!-- badges: start -->

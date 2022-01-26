@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# voters
+# voters <img src='man/figures/logo_edit.png' align="right" height="189" />
 
 <!-- badges: start -->
 
