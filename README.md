@@ -7,10 +7,11 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/jvieroe/voters/badge)](https://www.codefactor.io/repository/github/jvieroe/voters)
 [![R-CMD-check](https://github.com/jvieroe/voters/workflows/R-CMD-check/badge.svg)](https://github.com/jvieroe/voters/actions)
-[![License: GPL
-(\>= 3)](https://img.shields.io/badge/license-GPL%20\(%3E=%203\)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20\(%3E=%203\))
+[![License: GPL (>=
+3)](https://img.shields.io/badge/license-GPL%20(%3E=%203)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20(%3E=%203))
 [![](https://img.shields.io/github/last-commit/https://github.com/jvieroe/voters.svg)](https://github.com/https://github.com/jvieroe/voters/commits/main)
-[![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![](https://img.shields.io/badge/devel%20version-0.1.0-dodgerblue.svg)](https://github.com/https://github.com/jvieroe/voters)
 <!-- badges: end -->
 
 # Introduction
@@ -68,19 +69,18 @@ df
 
 ``` r
 library(ggplot2)
-library(Manu)
-library(ggpubr)
+library(MetBrewer)
+
+pal <- met.brewer("Isfahan2", type = "discrete")
 
 df %>% 
-  #filter(stkreds %in% c("København", "Københavns Omegn")) %>% 
   ggplot(data = .) +
   geom_sf(aes(fill = regi),
           color = "grey90",
           size = .0000000001) +
-  scale_fill_manual(values = Manu::get_pal("Takahe"),
+  scale_fill_manual(values = pal,
                       name = "") +
-  theme_void() +
-  ggpubr::theme_transparent()
+  theme_void()
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="85%" style="display: block; margin: auto;" />
@@ -89,8 +89,8 @@ df %>%
 
 ### Data format
 
-As a default, data is downloaded as a spatial dataset of type `"sf",
-"tibble"`:
+As a default, data is downloaded as a spatial dataset of type
+`"sf", "tibble"`:
 
 ``` r
 class(df)
@@ -138,13 +138,13 @@ devtools::install_github("jvieroe/voters")
 
 # Acknowledgements
 
-  - [Danmarks Adressers Web API
+-   [Danmarks Adressers Web API
     (DAWA)](https://dawadocs.dataforsyningen.dk/) for the data and the
     API functionality
-  - [Danish Election Database](https://valgdatabase.dst.dk/?lang=en) for
+-   [Danish Election Database](https://valgdatabase.dst.dk/?lang=en) for
     data
-  - Frederik Hjorth ([fghjorth](http://fghjorth.github.io/)) and Bo
+-   Frederik Hjorth ([fghjorth](http://fghjorth.github.io/)) and Bo
     Schwartz Madsen
     ([BoSchwartz](https://twitter.com/boschwartz?lang=en)) for
     development ideas
-  - The `R` Core Team for developing and maintaining the language
+-   The `R` Core Team for developing and maintaining the language
