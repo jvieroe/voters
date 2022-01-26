@@ -9,9 +9,10 @@
 [![R-CMD-check](https://github.com/jvieroe/voters/workflows/R-CMD-check/badge.svg)](https://github.com/jvieroe/voters/actions)
 [![License: GPL (>=
 3)](https://img.shields.io/badge/license-GPL%20(%3E=%203)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20(%3E=%203))
-[![](https://img.shields.io/github/last-commit/https://github.com/jvieroe/voters.svg)](https://github.com/https://github.com/jvieroe/voters/commits/main)
+[![](https://img.shields.io/github/last-commit/jvieroe/voters.svg)](https://github.com/https://github.com/jvieroe/voters/commits/main)
 [![](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![](https://img.shields.io/badge/devel%20version-0.1.0-dodgerblue.svg)](https://github.com/https://github.com/jvieroe/voters)
+[![](https://codecov.io/gh/jvieroe/voters/branch/main/graph/badge.svg?token=80fb5b55-d176-4a71-a6fb-4bdada29ad0d)](https://codecov.io/gh/https://github.com/jvieroe/voters)
 <!-- badges: end -->
 
 # Introduction
