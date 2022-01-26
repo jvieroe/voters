@@ -11,7 +11,7 @@ test_that(
 test_that(
   "argument errors work: spatial", {
 
-    expect_error(voters::getPS(spatial = 1),
+    expect_error(voters::getPS(spatial = 3),
                  regexp = "Invalid 'spatial' argument provided. Must be logical")
 
 
