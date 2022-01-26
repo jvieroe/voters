@@ -4,7 +4,7 @@ Version: 0.1.0
 Authors@R: 
     person("Jeppe", "Vierø", , "jvieroe@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: This package uses the <a href="https://github.com/jvieroe/CV/raw/main/CV_JeppeVieroe.pdf">DAWA API</a> to extract data on Danish polling stations as simple features objects.
+Description: This package uses the <a href="https://dawadocs.dataforsyningen.dk">DAWA API</a> to extract data on Danish polling stations as simple features objects.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
