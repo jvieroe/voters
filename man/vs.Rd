@@ -7,10 +7,13 @@
 \format{
 A \code{tibble} with 1,384 rows and 3 columns
 }
+\source{
+Collected from \url{https://valgdatabase.dst.dk/?lang=en}
+}
 \usage{
 vs
 }
 \description{
-Polling station data with IDs. Collected from \url{https://valgdatabase.dst.dk/?lang=en}
+Polling station data with IDs
 }
 \keyword{datasets}
