@@ -1,7 +1,7 @@
 Package: voters
 Title: Extract Data on Danish Polling Stations
 Version: 0.1.0
-Authors@R: 
+Authors@R:
     person("Jeppe", "Vierø", , "jvieroe@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: A fast way to access data on Danish polling stations as simple features objects using the <https://dawadocs.dataforsyningen.dk> API.
@@ -9,12 +9,12 @@ License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-Imports: 
-    magrittr (>= 2.0.1), dplyr (>= 1.0.7), tibble (>= 3.1.5), lubridate (>= 1.8.0), janitor (>= 2.1.0), rgdal (>= 1.5.27), sf (>= 1.0.3), labelled (>= 2.9.0)
-Depends: 
+Imports:
+    magrittr (>= 2.0.1), dplyr (>= 1.0.7), tibble (>= 3.1.6), lubridate (>= 1.8.0), janitor (>= 2.1.0), rgdal (>= 1.5.28), sf (>= 1.0.5), labelled (>= 2.9.0)
+Depends:
     R (>= 2.10)
 LazyData: true
-Suggests: 
+Suggests:
     covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
